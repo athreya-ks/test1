@@ -10,6 +10,14 @@ resource "null_resource" "sleep12" {
     command = "sleep 29m"
   }
 }
+
+resource "null_resource" "sleep13" {
+  depends_on = [null_resource.sleep12]
+  provisioner "local-exec" {
+    command = "sleep 10m"
+  }
+}
+
 terraform {
   required_providers {
     ibm = {
