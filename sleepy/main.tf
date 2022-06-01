@@ -14,7 +14,7 @@ resource "null_resource" "sleep12" {
 resource "null_resource" "sleep13" {
   depends_on = [null_resource.sleep12]
   provisioner "local-exec" {
-    command = "sleep 10m"
+    command = "sleep 12m"
   }
 }
 
